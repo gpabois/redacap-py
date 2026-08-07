@@ -38,3 +38,4 @@ Complète avec les visas usuels d'un arrêté de mise en demeure ICPE :
   (arrêté d'autorisation, rapport d'inspection).
 - N'invente pas de référence précise (numéro d'arrêté, date) absente des
   raisons fournies : reste générique si l'information n'est pas disponible.
+- Les articles législatifs et réglementaires d'un même code sont regroupés sur la même ligne.

@@ -41,7 +41,7 @@ from redacap.icpe.ap.med.conception_raison_mise_en_demeure import (
     conception_raison_mise_en_demeure,
 )
 from redacap.icpe.ap.legal_act import Article, LegalAct, TypeActe
-from redacap.icpe.ap.legal_act_odt import render_legal_act_odt
+from redacap.icpe.ap.legal_act_docx import render_legal_act_docx
 from redacap.icpe.report import Constat, InspectionReport
 from redacap.model import ocr_model
 
@@ -499,14 +499,14 @@ async def integre_acte_legal(state: StateMiseEnDemeure) -> Dict[str, Any]:
     return {"act": act}
 
 
-async def rendition_acte_legal_odt(state: StateMiseEnDemeure) -> Dict[str, Any]:
-    """Rend le LegalAct en ODT et l'enregistre à l'emplacement demandé à l'utilisateur."""
+async def rendition_acte_legal_docx(state: StateMiseEnDemeure) -> Dict[str, Any]:
+    """Rend le LegalAct en DOCX et l'enregistre à l'emplacement demandé à l'utilisateur."""
     if not state.get("acte_legal_output_filepath"):
-        output_filepath = interrupt("Donner le chemin de sauvegarde du fichier ODT de l'arrêté")
+        output_filepath = interrupt(f"Donner le chemin de sauvegarde du fichier DOCX de l'arrêté: {state.get("acte_legal_output_filepath")}")
     else:
         output_filepath = state.get("acte_legal_output_filepath")
 
-    await asyncio.to_thread(render_legal_act_odt, state["act"], output_filepath)
+    await asyncio.to_thread(render_legal_act_docx, state["act"], output_filepath)
 
     return {"acte_legal_output_filepath": output_filepath}
 
@@ -531,7 +531,7 @@ graph = (
     .add_node(verifie_article_premier)
     .add_node(verifie_articles_suivants)
     .add_node(integre_acte_legal)
-    .add_node(rendition_acte_legal_odt)
+    .add_node(rendition_acte_legal_docx)
     .add_conditional_edges("__start__", check_inspection_report, {True: "extract_raisons_mise_en_demeure", False: "ask_inspection_report"})
     .add_edge("ask_inspection_report", "extract_inspection_report")
     .add_edge("extract_inspection_report", "structure_inspection_report")
@@ -577,6 +577,6 @@ graph = (
         route_apres_verification_articles_suivants,
         {True: "integre_acte_legal", False: "redige_articles_suivants"},
     )
-    .add_edge("integre_acte_legal", "rendition_acte_legal_odt")
+    .add_edge("integre_acte_legal", "rendition_acte_legal_docx")
     .compile(name="RedactMiseEnDemeure")
 )

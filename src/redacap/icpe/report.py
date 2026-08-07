@@ -113,7 +113,6 @@ class Constat(BaseModel):
             "technique, irrégularité administrative, ou aucun des deux"
         ),
     )
-    constats: list[Constat]
     suites: Optional[SuiteAdministrative]
     delai_mise_en_conformite: Optional[str] = None
 

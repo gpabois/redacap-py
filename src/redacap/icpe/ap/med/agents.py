@@ -7,6 +7,7 @@ Pydantic schema via structured output.
 
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from enum import Enum
 from pathlib import Path
@@ -20,7 +21,7 @@ from redacap.icpe.ap.legal_act import Article
 from redacap.icpe.report import InspectionReport
 from redacap.model import model
 
-PROMPTS_DIR = Path(__file__).parent / "agents"
+PROMPTS_DIR = Path(os.environ["AGENT_PROMPTS_ROOT_DIR"]) / "icpe" / "med"
 
 
 @dataclass

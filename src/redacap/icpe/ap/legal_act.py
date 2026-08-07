@@ -47,6 +47,10 @@ class LegalAct(BaseModel):
     date_notification: Optional[date] = None
     prefecture: Optional[str] = None
     departement: Optional[str] = None
+    dreal: Optional[str] = Field(
+        None,
+        description="Direction régionale (DREAL/DEAL) instructrice, affichée dans le timbre administratif",
+    )
     signataire: Optional[str] = Field(
         None, description="Nom et qualité du signataire (préfet ou délégataire)"
     )

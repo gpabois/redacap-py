@@ -19,6 +19,8 @@ contenu respecte scrupuleusement les consignes suivantes :
 - Chaque point est formulé à l'impératif administratif et reprend le délai
   (delai_valeur + délai_unité) exact de la raison correspondante, sans
   modification.
+- Chaque point doit comporter une référence légale vers la disposition faisant
+  l'objet d'une non-conformité.
 - Le contenu est exploitable tel quel : aucun commentaire, aucun méta-texte.
 
 Vérifie en outre, point par point, la règle de citation des sources

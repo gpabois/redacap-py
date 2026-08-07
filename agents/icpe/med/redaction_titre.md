@@ -21,3 +21,5 @@ phrase la nature de l'acte (mise en demeure) et l'exploitant concerné.
 - Reste générique sur le fond des non-conformités (ex. « mise en demeure de
   mise en conformité ») : le détail des motifs est développé ailleurs dans
   l'arrêté (considérants, articles).
+- Génère de manière trés synthétique un titre portant sur le contenu de la mise 
+  en demeure.

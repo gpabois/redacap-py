@@ -58,3 +58,6 @@ Pour chaque constat non conforme, qualifie le manquement relevé :
 - Si une information apparaît à plusieurs endroits du rapport de façon
   légèrement différente, privilégie la version la plus précise ou la plus
   récente.
+- Tu ne gardes que la personne morale comme référence d'exploitant 
+  dès lors qu'elle est identifiée, en particulier tu ne mentionnes pas
+  un salarié, un chef d'entreprise, un mandataire, etc. 

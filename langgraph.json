@@ -2,7 +2,7 @@
   "$schema": "https://langgra.ph/schema.json",
   "dependencies": ["."],
   "graphs": {
-    "icpe:ap:med:rédaction": "./src/redacap/icpe/ap/med/graph.py:graph"
+    "icpe:ap:med:redaction": "./src/redacap/icpe/ap/med/graph.py:graph"
   },
   "env": ".env",
   "image_distro": "wolfi"
